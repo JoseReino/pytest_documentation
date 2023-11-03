@@ -49,37 +49,47 @@
 The ``pytest`` framework makes it easy to write small tests, yet
 scales to support complex functional testing for applications and libraries.
 
+Running pytest on Windows
+-------------------------
+
 An example of a simple test:
 
 .. code-block:: python
 
     # content of test_sample.py
-    def inc(x):
-        return x + 1
+    def func(x):
+        return x - 7
 
 
     def test_answer():
-        assert inc(3) == 5
+        assert func(7) == 1
 
 
-To execute it::
+To execute it via terminal::
 
-    $ pytest
-    ============================= test session starts =============================
-    collected 1 items
+   PS C:\Users\XXX\XXX\XXX> pytest
+   ======================================================================================================== test session starts ========================================================================================================
+   platform win32 -- Python 3.11.6, pytest-7.4.2, pluggy-1.3.0
+   rootdir: C:\Users\XXX\XXX\XXX
+   plugins: anyio-4.0.0
+   collected 1 item
 
-    test_sample.py F
+   test_sample.py F                                                                                                                                                                                                               [100%]
 
-    ================================== FAILURES ===================================
-    _________________________________ test_answer _________________________________
+   ============================================================================================================= FAILURES ==============================================================================================================
+   ____________________________________________________________________________________________________________ test_answer ____________________________________________________________________________________________________________
 
-        def test_answer():
-    >       assert inc(3) == 5
-    E       assert 4 == 5
-    E        +  where 4 = inc(3)
+    def test_answer():
+   >       assert func(7) == 1
+   E       assert 0 == 1
+   E        +  where 0 = func(7)
 
-    test_sample.py:5: AssertionError
-    ========================== 1 failed in 0.04 seconds ===========================
+   test_sample.py:6: AssertionError
+   ====================================================================================================== short test summary info ====================================================================================================== 
+   FAILED test_sample.py::test_answer - assert 0 == 1
+   ========================================================================================================= 1 failed in 0.08s ========================================================================================================= 
+This first example is a failed test.
+
 
 
 Due to ``pytest``'s detailed assertion introspection, only plain ``assert`` statements are used. See `getting-started <https://docs.pytest.org/en/stable/getting-started.html#our-first-test-run>`_ for more examples.
