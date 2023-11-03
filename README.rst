@@ -60,6 +60,10 @@ Install pytest using pip:
 Running pytest on Windows
 -------------------------
 
+Create a python file such as 'test_sample.py'.
+
+Navigate to the dictionary containing the python file. 
+
 An example of a simple test:
 
 .. code-block:: python
