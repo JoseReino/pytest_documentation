@@ -118,6 +118,46 @@ A passing test should look something like this::
 
 Due to ``pytest``'s detailed assertion introspection, only plain ``assert`` statements are used. See `getting-started <https://docs.pytest.org/en/stable/getting-started.html#our-first-test-run>`_ for more examples.
 
+Common Commands
+---------------
+
+.. code-block:: python
+
+   pytest -q
+Run tests in quiet mode. Output after text execution is shortened. 
+
+.. code-block:: python
+
+   pytest -k 'test name here'
+Run a set of tests with a given expression.
+
+.. code-block:: python
+
+   pytest -v 
+Run more detailed tests
+
+.. code-block:: python
+
+   pytest -W ignore: :'name of warning here'
+Ignores certain warning during test execution
+
+Pytest will run all files that are in the current directory and its subdirectories unless otherwise specified.
+
+.. code-block:: python
+
+   pytest path/to/sample_test.py
+This will run the specific 'sample_test.py' file.
+
+.. code-block:: python
+
+   pytest path/to/sample_test.py::test_function_name
+This will run a test for the function specified from the file specified.
+
+
+
+
+
+
 
 Features
 --------
