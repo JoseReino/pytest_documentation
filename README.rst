@@ -90,6 +90,18 @@ To execute it via terminal::
    ========================================================================================================= 1 failed in 0.08s ========================================================================================================= 
 This first example is a failed test.
 
+A passing test should look something like this::
+
+   ======================================================================================================== test session starts ========================================================================================================
+   platform win32 -- Python 3.11.6, pytest-7.4.2, pluggy-1.3.0
+   rootdir: C:\Users\XXX\XXX\XXX
+   plugins: anyio-4.0.0
+   collected 1 item                                                                                                                                                                                                                      
+
+   test_sample.py .                                                                                                                                                                                                               [100%] 
+
+   ========================================================================================================= 1 passed in 0.02s ========================================================================================================= 
+
 
 
 Due to ``pytest``'s detailed assertion introspection, only plain ``assert`` statements are used. See `getting-started <https://docs.pytest.org/en/stable/getting-started.html#our-first-test-run>`_ for more examples.
